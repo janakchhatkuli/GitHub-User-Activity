@@ -9,7 +9,7 @@ All commands are listed below :
 python activity.py --username your_username
 
 # Filtering by event_type
-python activity.py --username your_username --type event_name
+python activity.py --username your_username --type event_type
 
 # All the event_type:
 | Event Type                      | Description                                         |
