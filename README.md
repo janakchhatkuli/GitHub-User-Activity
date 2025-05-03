@@ -6,10 +6,10 @@ URL of the Project Guideline : https://roadmap.sh/projects/github-user-activity
 All commands are listed below :
 
 ## Fetching activity from username
-python activity.py --username your_username
+`python activity.py --username your_username`
 
 ## Filtering by event_type
-python activity.py --username your_username --type event_type
+`python activity.py --username your_username --type event_type`
 
 ## All the event_type:
 | Event Type                      | Description                                         |
