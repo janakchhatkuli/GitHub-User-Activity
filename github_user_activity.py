@@ -27,7 +27,30 @@ def fetch_user_activity(username):
             print(f"{action} a comment on a commit on {event_repo} at {event_time} ")
         elif event_type == "CreateEvent":
             ref_type = event['payload']['ref_type']
-            print(f"Created a {ref_type} on {event_repo} at {event_time}")
+            ref = event['payload']['ref']
+            print(f"Created a {ref_type} on {ref} at {event_time}")
+        elif event_type == "DeleteEvent":
+            ref_type = event['payload']['ref_type']
+            ref = event['payload']['ref']
+            print(f"Deleted a {ref_type} on {ref} at {event_time}")
+        elif event_type == "ForkeEvent":
+            forkee = event['payload']['forkee']
+            print(f"Forked  {forkee} repo  at {event_time}")
+
+        elif event_type == "IssueCommentType":
+            action = event['payload']['action']
+            print(f"{action.capitalize()} a comment on {event_repo} at {event_time}")
+        
+        elif event_type == "IssuesEvent" :
+            action = event['payload']['action']
+            print(f"{action.capitalize()} a Issue on {event_repo} at {event_type} ")
+
+        elif event_type == "PullRequestEvent" :
+            action = event['payload']['action']
+            pull_req = event['payload']['pull_request']
+            print(f"{action.capitalize()} a {pull_req} on {event_repo} at {event_time}")
+
+
         else:
             print(f"{event_type} on {event_repo} at {event_time}")
 
