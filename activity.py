@@ -11,7 +11,7 @@ def fetch_user_activity(username,event_type_filter=None):
         print("failed to fetch from the username!!! ")
         return
     print("=" * 40)
-    print(f"👤 GitHub Activity for: {username}")
+    print(f"👤 GitHub Activity for: {username} {f":{event_type_filter}" if event_type_filter!=None else ""}")
     print("=" * 40)
 
     events=fetched.json()
