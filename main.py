@@ -8,7 +8,7 @@ class AddRequest(BaseModel) :
     username: str
     event_type_filter : str | None = None
 
-@app.post("/fetch_activity")
+@app.post("/fetch_user_activity")
 def activity(data : AddRequest):
     return{"result": fetch_user_activity(data.username,data.event_type_filter)}
 
