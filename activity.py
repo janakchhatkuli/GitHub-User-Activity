@@ -39,8 +39,7 @@ def fetch_user_activity(username,event_type_filter=None):
             ref = event['payload']['ref']
             result.append(f"- Deleted a {ref_type} {f": {ref} on {event_repo}" if ref != None else f' {event_repo}'} at {event_time}")
         elif event_type == "ForkEvent":
-            forkee = event['payload']['forkee']
-            result.append(f"- Forked  {forkee} repo  at {event_time}")
+            result.append(f"- Forked  {event_repo} repo  at {event_time}")
 
         elif event_type == "IssueCommentEvent":
             action = event['payload']['action']
